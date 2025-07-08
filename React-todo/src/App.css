@@ -1,0 +1,190 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: 'Inter', sans-serif;
+  background-color: #f6f6f6;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+/* Container */
+.container {
+  background-color: #ffffff;
+  padding: 32px;
+  border-radius: 24px;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.05);
+  width: 100%;
+  height: 100%;
+  max-width: 430px;
+  max-height: 930px;
+}
+
+/* Main Title */
+.main-title {
+  font-size: 36px;
+  font-weight: bolder;
+  text-align: center;
+  margin-bottom: 32px;
+  color: #000000;
+  padding-left: 12px;
+}
+
+/* Section */
+.task-group {
+  margin-bottom: 24px;
+}
+
+.section-title {
+  font-size: 12px;
+  font-weight: 600;
+  color: #D1A28B;
+  padding-bottom: 16px;
+  padding-left: 12px;
+}
+
+/* Task List */
+.task-list {
+  list-style: none;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Task Item */
+.task-item {
+  background-color: #F3EFEE;
+  border-radius: 12px;
+  transition: background 0.3s ease;
+}
+
+.task-item:hover {
+  background-color: #e8e8e8;
+}
+
+/* Label holding custom checkbox and text */
+.task-label {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+}
+
+/* Hide native checkbox */
+.input[type="checkbox"] {
+  display: none;
+}
+
+/* Custom Checkbox */
+.custom-checkbox {
+  display: inline-block;
+  width: 20px;
+  height: 20px;
+  border: 2px solid #9F9F9F;
+  border-radius: 4px;
+  position: relative;
+  cursor: pointer;
+  margin-right: 12px;
+  margin-left: 16px;
+}
+
+/* Checkmark (visible when checked) */
+.custom-checkbox::after {
+  content: "";
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  width: 10px;
+  height: 10px;
+  background-color: #D1A28B;
+  border-radius: 2px;
+  opacity: 0;
+  transition: opacity 0.2s ease-in-out;
+}
+
+.input[type="checkbox"]:checked + .custom-checkbox::after {
+  opacity: 1;
+}
+
+/* Task text */
+.task-text {
+  font-size: 17px;
+  color: #121212;
+  font-weight: bold;
+  padding: 16px 0;
+}
+
+/* Optional: Strike-through on checked */
+.input[type="checkbox"]:checked + .custom-checkbox + .task-text {
+  text-decoration: line-through;
+  color: #9F9F9F;
+}
+
+/* Add Task Section */
+.add-task {
+  display: flex;
+  gap: 12px;
+  margin-top: 24px;
+  justify-content: space-between;
+  align-items: center;
+}
+
+/* Input + Dropdown container */
+.task-input-wrapper {
+  display: flex;
+  align-items: center;
+  flex: 1;
+  background-color: #F3EFEE;
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+/* Typing Input */
+.task-input {
+  flex: 1;
+  padding: 16px;
+  border: none;
+  background-color: transparent;
+  font-size: 17px;
+  color: #222222;
+  font-weight: bold;
+  outline: none;
+  max-width: 70%;
+}
+
+/* Dropdown Selector */
+.task-type {
+  width: 110px;
+  flex-shrink: 0;
+  /* padding: 16px 12px; */
+  border: none;
+  background-color: transparent;
+  font-size: 10px;
+  color: #222222;
+  font-weight: bold;
+  outline: none;
+  cursor: pointer;
+  border-left: 1px solid #ccc;
+}
+
+/* Add Button */
+.add-button {
+  background-color: #2f2a28;
+  color: white;
+  padding: 16px 20px;
+  border: none;
+  border-radius: 12px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.add-button:hover {
+  background-color: #1f1c1a;
+}
